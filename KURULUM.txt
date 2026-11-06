@@ -1,0 +1,27 @@
+LANGUAGE BANK - TAM PROJE
+
+Bu ZIP, calistirmak icin gereken proje dosyalarini birlikte icerir:
+- app.py
+- requirements.txt
+- templates/ (ana sayfa, giris, kayit, panel, ders, sonuc, kelimelerim, siralama)
+- static/style.css ve static/tema.css
+
+KURULUM:
+1. ZIP dosyasini bir klasore cikart.
+2. VSCodium'da bu klasoru ac.
+3. Terminalde proje klasorune gel.
+4. Sanal ortam olustur ve etkinlestir:
+   python3 -m venv venv
+   source venv/bin/activate
+5. Paketleri yukle:
+   pip install -r requirements.txt
+6. Uygulamayi baslat:
+   python app.py
+7. Tarayicida terminalde yazan adresi ac (genellikle http://127.0.0.1:5001).
+
+NOTLAR:
+- Onceki tam baslangic projesindeki app.py ve requirements.txt korunmustur.
+- Gonderdigin 5 HTML dosyasi guncel emoji/tema baglantilariyla kullanilmistir.
+- Gondermedigin login.html, register.html, result.html ve review.html dosyalari onceki tam projeden korunmustur.
+- Mevcut style.css silinmemistir; tema.css onun uzerine siyah-kirmizi gorunumu uygular.
+- Dogru cevap yesil gorunumu, ilgili cevap elemanina correct sinifi verilirse uygulanir.
