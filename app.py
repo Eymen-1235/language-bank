@@ -1,7 +1,14 @@
 
 import os
 
-from flask import Flask, render_template, redirect, url_for, flash
+from flask import (
+    Flask,
+    render_template,
+    redirect,
+    url_for,
+    flash,
+    send_from_directory
+)
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import (
     LoginManager,
@@ -222,6 +229,19 @@ def logout():
     logout_user()
     flash("Başarıyla çıkış yaptın.", "success")
     return redirect(url_for("login"))
+
+
+# PWA Service Worker
+@app.route("/service-worker.js")
+def service_worker():
+    response = send_from_directory(
+        app.root_path,
+        "service-worker.js",
+        mimetype="application/javascript"
+    )
+    response.headers["Service-Worker-Allowed"] = "/"
+    response.headers["Cache-Control"] = "no-cache"
+    return response
 
 
 # Veritabanını oluştur
